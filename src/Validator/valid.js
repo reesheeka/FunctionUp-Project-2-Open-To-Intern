@@ -26,6 +26,8 @@ function checkUrl(url){
     const regexLink = /^[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/
     return regexLink.test(url)
 }
+function strLower(x){
+   return  x == x.toLowerCase()?true:false
+}
 
-
-module.exports = { checkName ,checkEmail , checkUrl ,mobileNum  , validValue}
+module.exports = { checkName ,checkEmail , checkUrl ,mobileNum  , validValue , strLower}
