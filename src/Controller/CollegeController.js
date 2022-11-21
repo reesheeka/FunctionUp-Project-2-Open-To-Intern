@@ -17,7 +17,6 @@ const createCollege= async (req,res)=>{
             return res.status(400).send({status:false , message :'Please Enter College Full-Name'})
         }
         if(!checkName(fullName)){
-    
             return res.status(400).send({status:false , message :'Please Enter A Valid College Full-Name'})
         }
         if(!validValue(logoLink)){
@@ -26,7 +25,10 @@ const createCollege= async (req,res)=>{
         if(!checkUrl(logoLink)){
             return res.status(400).send({status:false , message :'Please Enter A Valid Logo- ink'})
         }
-    
+        
+
+
+
         const nameExist = await collegeModel.findOne({$or:[ { name:name} ,{fullName:fullName}]})
     
         if(nameExist)  return res.status(400).send({status:false , message :'College Name Already Exist'}) 

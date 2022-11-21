@@ -1,11 +1,3 @@
-const { isValidObjectId  } = require('mongoose')
-
-
-// function validValue(value){
-//     if( typeof value == undefined || value==null || value.trim().length==0 || typeof value != String )   return false
-//  else   
-//     return true 
-// }
 
 const validValue = function(value){
     if(typeof value ==='undefined' || value ===null)  return false
@@ -35,8 +27,5 @@ function checkUrl(url){
     return regexLink.test(url)
 }
 
-function validObjid(id){
-        return isValidObjectId(id)
-}
 
-module.exports = {validObjid , checkName ,checkEmail , checkUrl ,mobileNum  , validValue}
+module.exports = { checkName ,checkEmail , checkUrl ,mobileNum  , validValue}
