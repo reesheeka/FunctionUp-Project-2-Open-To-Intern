@@ -1,11 +1,7 @@
 const { isValidObjectId  } = require('mongoose')
 
 
-// function validValue(value){
-//     if( typeof value == undefined || value==null || value.trim().length==0 || typeof value != String )   return false
-//  else   
-//     return true 
-// }
+
 
 const validValue = function(value){
     if(typeof value ==='undefined' || value ===null)  return false
