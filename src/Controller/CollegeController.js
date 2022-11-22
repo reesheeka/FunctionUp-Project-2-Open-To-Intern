@@ -4,7 +4,7 @@ const internModel = require('../Models/InternModel.js');
 const { checkName, checkUrl, validValue, strLower } = require('../Validator/valid.js');
 
 
-//>--------------------------CREATE-COLLEGE API-----------------------------<
+//>-----------------------------CREATE-COLLEGE API--------------------------------<
 
 const createCollege = async (req, res) => {
 
@@ -61,7 +61,7 @@ const createCollege = async (req, res) => {
 }
 
 
-//>--------------------------GET-COLLEGEDETAILS-API-----------------------------<
+//>--------------------------GET-COLLEGE-DETAILS-API-----------------------------<
 
 const getCollegeDetails = async (req, res) => {
     try {
@@ -91,7 +91,7 @@ const getCollegeDetails = async (req, res) => {
             interns: getInterns
         }
 
-        return res.status(201).send({ status: true, data: details });
+        return res.status(200).send({ status: true, data: details });
     }
     catch (error) {
         return res.status(500).send({ status: false, message: error.message });
