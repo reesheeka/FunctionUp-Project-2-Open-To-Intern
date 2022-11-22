@@ -27,7 +27,6 @@ const internSchema = new mongoose.Schema(
       default: false,
     },
   },
-  { timestamps: true }
-);
+  { timestamps: true });
 
 module.exports = new mongoose.model("intern-Model", internSchema);
