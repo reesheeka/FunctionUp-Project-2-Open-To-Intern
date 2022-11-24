@@ -1,7 +1,7 @@
 const internModel = require('../Models/InternModel.js');
 const collegeModel = require('../Models/CollegeModel.js');
 
-const { checkName, checkEmail, mobileNum, validValue } = require('../Validator/valid.js');
+const { checkEmail, mobileNum, validValue } = require('../Validator/valid.js');
 
 
 //>----------------------------CREATE-INTERN-API----------------------------<
@@ -17,26 +17,23 @@ const createIntern = async (req, res) => {
         if (!validValue(name)) {
             return res.status(400).send({ status: false, message: 'Please Enter Name😑😑😑' });
         }
-        if (!checkName(name)) {
-            return res.status(400).send({ status: false, message: 'Please Enter A Valid Name😑😑😑!' });
-        }
+    
         if (!validValue(email)) {
             return res.status(400).send({ status: false, message: 'Please Enter Email😑😑😑' });
         }
         if (!checkEmail(email)) {
             return res.status(400).send({ status: false, message: 'Please Enter A valid Email😑😑😑!' });
         }
+
         if (!validValue(mobile)) {
             return res.status(400).send({ status: false, message: 'Please Enter Mobile Number😑😑😑' });
         }
         if (!mobileNum(mobile)) {
             return res.status(400).send({ status: false, message: 'Please Enter A valid Mobile Number😑😑😑!' });
         }
+
         if (!validValue(collegeName)) {
             return res.status(400).send({ status: false, message: 'Please Enter College Name😑😑😑' });
-        }
-        if (!checkName(collegeName)) {
-            return res.status(400).send({ status: false, message: 'Please Enter A Valid College Name😑😑😑' });
         }
 
         const EmailExist = await internModel.findOne({ email: email })
@@ -57,9 +54,7 @@ const createIntern = async (req, res) => {
             
             const createIntern = await internModel.create(req.body)
 
-            const getIntern = await internModel.findOne(createIntern).select({ _id: 0, createdAt: 0, updatedAt: 0, __v: 0 })
-
-            return res.status(201).send({ status: true, data: getIntern });
+            return res.status(201).send({ status: true, data: createIntern });
 
         } else {
             return res.status(400).send({ status: false, msg: 'Wrong College Name😒😒😒' });
