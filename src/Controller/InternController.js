@@ -57,7 +57,7 @@ const createIntern = async (req, res) => {
             return res.status(201).send({ status: true, data: createIntern });
 
         } else {
-            return res.status(400).send({ status: false, msg: 'Wrong College Name😒😒😒' });
+            return res.status(400).send({ status: false, message: 'Wrong College Name😒😒😒' });
         }
     }
     catch (error) {
