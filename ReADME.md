@@ -6,7 +6,6 @@ This time each group should have a single git branch. Coordinate amongst yoursel
 Follow the naming conventions exactly as instructed. The backend code will be integrated with the front-end application which means any mismatch in the expected request body will lead to failure in successful integration.
 
 # Models
-
 # College Model
 { name: { mandatory, unique, example iith}, fullName: {mandatory, example `Indian Institute of Technology, Hyderabad`}, logoLink: {mandatory}, isDeleted: {boolean, default: false} }
 
@@ -40,19 +39,19 @@ Refer below sample
 A Postman collection and request sample
 
 # Response
-Successful Response structure
+# Successful Response structure
 {
   status: true,
   data: {
 
   }
 }
-Error Response structure
+# Error Response structure
 {
   status: false,
   message: ""
 }
-Collections samples
+# Collections samples
 College
 {
     "name" : "iith",
@@ -68,7 +67,7 @@ Intern
     "mobile" : "90000900000",
     "collegeId" : ObjectId("888771129c9ea621dc7f5e3b")
 }
-Response samples
+# Response samples
 College details
 {
   "data": {
